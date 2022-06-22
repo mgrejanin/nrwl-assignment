@@ -1,0 +1,25 @@
+{
+  "projectType": "library",
+  "sourceRoot": "libs/tickets/ui/src",
+  "prefix": "acme",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/tickets/ui"],
+      "options": {
+        "jestConfig": "libs/tickets/ui/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/tickets/ui/**/*.ts",
+          "libs/tickets/ui/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["scope:tickets", "type:ui"]
+}
