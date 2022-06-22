@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
+// eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
 import { Ticket, User } from '@acme/shared-models';
 
 import styles from './app.module.css';

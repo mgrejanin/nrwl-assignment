@@ -1,1 +1,1 @@
-<acme-ui-list [tickets]="tickets$"></acme-ui-list>
+<acme-ui-list [tickets]="(tickets$ | async) || []"></acme-ui-list>
