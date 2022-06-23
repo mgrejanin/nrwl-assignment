@@ -1,7 +1,7 @@
 import { Ticket } from '@acme/shared-models';
 import { TicketsStatusToFilter } from '@acme/tickets-utils';
 import { TicketsQuery, TicketsService } from '@acme/tickets/data-access';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
   templateUrl: './tickets-feature-list.component.html',
   styleUrls: ['./tickets-feature-list.component.scss'],
 })
-export class TicketsFeatureListComponent implements OnInit {
+export class TicketsFeatureListComponent {
   readonly tickets$!: Observable<Ticket[]>;
 
   constructor(
@@ -19,19 +19,11 @@ export class TicketsFeatureListComponent implements OnInit {
     this.tickets$ = this.ticketsQuery.tickets$;
   }
 
-  ngOnInit(): void {
-    this.ticketsService.getTickets();
-  }
-
   onAddTicket(description: string): void {
     this.ticketsService.addTicket({ description });
   }
 
   onFilterTickets(filter: TicketsStatusToFilter) {
     this.ticketsService.updateFilter(filter);
-  }
-
-  onOpenTicketDetails(id: number) {
-    this.ticketsService.setActiveTicket(id);
   }
 }
