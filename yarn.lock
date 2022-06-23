@@ -1988,6 +1988,13 @@
     debug "^3.1.0"
     lodash.once "^4.1.1"
 
+"@datorama/akita-ngdevtools@^7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@datorama/akita-ngdevtools/-/akita-ngdevtools-7.0.0.tgz#81494fc2cc3e70f6a2cab52c75acb72b711bb0f9"
+  integrity sha512-ufUYu+mG9LFxDlbF4A8HYB6RhWLWy0U8iadu1ORUIEwpKhNZ6f+H4UH8ntzNxtKgf2yf61yV+s2CJ4i+WezfzA==
+  dependencies:
+    tslib "^2.3.0"
+
 "@datorama/akita@^7.1.1":
   version "7.1.1"
   resolved "https://registry.yarnpkg.com/@datorama/akita/-/akita-7.1.1.tgz#912cf78c190a765ac815adee16116b688dd1edc0"
