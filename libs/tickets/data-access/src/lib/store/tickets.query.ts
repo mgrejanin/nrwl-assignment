@@ -10,10 +10,12 @@ export class TicketsQuery extends QueryEntity<TicketsState> {
   tickets$: Observable<Ticket[]>;
   activeTicket$: Observable<Ticket | undefined>;
   statusToFilter$: Observable<TicketsStatusToFilter>;
+  isLoading$: Observable<boolean>;
 
   constructor(protected override store: TicketsStore) {
     super(store);
 
+    this.isLoading$ = this.selectLoading();
     this.activeTicket$ = this.selectActive();
     this.statusToFilter$ = this.select((state) => state.filter);
     this.tickets$ = this.statusToFilter$.pipe(

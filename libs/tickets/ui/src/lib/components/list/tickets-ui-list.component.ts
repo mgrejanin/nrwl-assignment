@@ -20,6 +20,7 @@ export class TicketsUiListComponent {
   @Input() set tickets(tickets: Ticket[]) {
     this.dataSource = new MatTableDataSource<Ticket>(tickets);
   }
+  @Input() isLoadingTickets: boolean | null;
 
   @Output() addTicket = new EventEmitter<string>();
   @Output() filterByStatus = new EventEmitter<TicketsStatusToFilter>();
@@ -27,6 +28,7 @@ export class TicketsUiListComponent {
   constructor(private dialog: MatDialog) {
     this.dataSource = new MatTableDataSource<Ticket>();
     this.statusToFilter = Object.keys(this.ticketsStatusToFilter);
+    this.isLoadingTickets = true;
   }
 
   openAddTicketDialog() {

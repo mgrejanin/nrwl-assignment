@@ -59,6 +59,10 @@
       *matRowDef="let row; columns: columnsToDisplay"
     ></tr>
   </table>
+
+  <div class="container__loader mat-card" *ngIf="isLoadingTickets">
+    <mat-spinner></mat-spinner>
+  </div>
 </div>
 
 <ng-template #completedTicketChips

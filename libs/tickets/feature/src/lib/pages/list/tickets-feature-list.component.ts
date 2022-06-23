@@ -11,12 +11,14 @@ import { Observable } from 'rxjs';
 })
 export class TicketsFeatureListComponent {
   readonly tickets$!: Observable<Ticket[]>;
+  readonly isLoadingTickets$: Observable<boolean>;
 
   constructor(
     private ticketsService: TicketsService,
     private ticketsQuery: TicketsQuery
   ) {
     this.tickets$ = this.ticketsQuery.tickets$;
+    this.isLoadingTickets$ = this.ticketsQuery.isLoading$;
   }
 
   onAddTicket(description: string): void {

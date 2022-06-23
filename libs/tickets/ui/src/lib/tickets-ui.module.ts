@@ -5,6 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { RouterModule } from '@angular/router';
@@ -15,6 +16,7 @@ import { TicketsUiListComponent } from './components/list/tickets-ui-list.compon
   imports: [
     CommonModule,
     MatTableModule,
+    MatProgressSpinnerModule,
     MatButtonModule,
     MatDialogModule,
     MatInputModule,
