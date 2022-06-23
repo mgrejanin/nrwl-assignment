@@ -1,3 +1,3 @@
 export * from './lib/tickets-ui.module';
 
-export * from './lib/ui-list/ui-list.component';
+export * from './lib/list/tickets-ui-list.component';

@@ -4,11 +4,11 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'acme-feature-list',
-  templateUrl: './feature-list.component.html',
-  styleUrls: ['./feature-list.component.scss'],
+  selector: 'acme-tickets-feature-list',
+  templateUrl: './tickets-feature-list.component.html',
+  styleUrls: ['./tickets-feature-list.component.scss'],
 })
-export class FeatureListComponent implements OnInit {
+export class TicketsFeatureListComponent implements OnInit {
   readonly tickets$!: Observable<Ticket[]>;
 
   constructor(
@@ -20,5 +20,9 @@ export class FeatureListComponent implements OnInit {
 
   ngOnInit(): void {
     this.ticketsService.get();
+  }
+
+  onAddTicket(): void {
+    return;
   }
 }

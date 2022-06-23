@@ -3,7 +3,7 @@ import { TicketsUiModule } from '@acme/tickets/ui';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { FeatureListComponent } from './feature-list/feature-list.component';
+import { TicketsFeatureListComponent } from './feature-list/tickets-feature-list.component';
 
 @NgModule({
   imports: [
@@ -11,9 +11,9 @@ import { FeatureListComponent } from './feature-list/feature-list.component';
     TicketsUiModule,
     TicketsDataAccessModule,
     RouterModule.forChild([
-      { path: '', pathMatch: 'full', component: FeatureListComponent },
+      { path: '', pathMatch: 'full', component: TicketsFeatureListComponent },
     ]),
   ],
-  declarations: [FeatureListComponent],
+  declarations: [TicketsFeatureListComponent],
 })
 export class TicketsFeatureModule {}

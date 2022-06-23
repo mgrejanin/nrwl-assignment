@@ -6,10 +6,6 @@ import { Ticket, User } from '@acme/shared-models';
 export class ApiService {
   constructor(private httpClient: HttpClient) {}
 
-  tickets() {
-    return this.httpClient.get<Ticket[]>('/api/tickets');
-  }
-
   ticket(id: number) {
     return this.httpClient.get<Ticket>(`/api/tickets/${id}`);
   }
