@@ -1,4 +1,5 @@
 import { Ticket } from '@acme/shared-models';
+import { TicketsStatusToFilter } from '@acme/tickets-utils';
 import { TicketsQuery, TicketsService } from '@acme/tickets/data-access';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -13,9 +14,9 @@ export class TicketsFeatureListComponent implements OnInit {
 
   constructor(
     private ticketsService: TicketsService,
-    ticketsQuery: TicketsQuery
+    private ticketsQuery: TicketsQuery
   ) {
-    this.tickets$ = ticketsQuery.tickets$;
+    this.tickets$ = this.ticketsQuery.tickets$;
   }
 
   ngOnInit(): void {
@@ -24,5 +25,9 @@ export class TicketsFeatureListComponent implements OnInit {
 
   onAddTicket(description: string): void {
     this.ticketsService.addTicket({ description });
+  }
+
+  onFilterTickets(filter: TicketsStatusToFilter) {
+    this.ticketsService.updateFilter(filter);
   }
 }

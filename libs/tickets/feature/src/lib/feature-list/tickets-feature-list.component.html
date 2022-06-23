@@ -1,4 +1,5 @@
 <acme-tickets-ui-list
   [tickets]="(tickets$ | async) || []"
   (addTicket)="onAddTicket($event)"
+  (filterByStatus)="onFilterTickets($event)"
 ></acme-tickets-ui-list>

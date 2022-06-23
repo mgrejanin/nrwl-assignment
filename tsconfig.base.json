@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@acme/shared-models": ["libs/shared-models/src/index.ts"],
+      "@acme/tickets-utils": ["libs/tickets/utils/src/index.ts"],
       "@acme/tickets/data-access": ["libs/tickets/data-access/src/index.ts"],
       "@acme/tickets/feature": ["libs/tickets/feature/src/index.ts"],
       "@acme/tickets/ui": ["libs/tickets/ui/src/index.ts"]

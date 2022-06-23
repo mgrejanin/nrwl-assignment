@@ -1,8 +1,11 @@
 import { Ticket } from '@acme/shared-models';
+import { TicketsStatusToFilter } from '@acme/tickets-utils';
 import { Injectable } from '@angular/core';
 import { EntityState, EntityStore, StoreConfig } from '@datorama/akita';
 
-export type TicketsState = EntityState<Ticket>;
+export interface TicketsState extends EntityState<Ticket> {
+  filter: TicketsStatusToFilter;
+}
 
 @Injectable({ providedIn: 'root' })
 @StoreConfig({ name: 'tickets' })

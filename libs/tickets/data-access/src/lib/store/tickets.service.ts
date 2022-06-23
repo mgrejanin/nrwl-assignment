@@ -1,4 +1,5 @@
 import { Ticket } from '@acme/shared-models';
+import { TicketsStatusToFilter } from '@acme/tickets-utils';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { TicketsStore } from './tickets.store';
@@ -20,6 +21,12 @@ export class TicketsService {
     this.httpClient
       .post<Ticket>('/api/tickets', payload)
       .subscribe((ticket: Ticket) => this.ticketsStore.add(ticket));
+  }
+
+  updateFilter(filter: TicketsStatusToFilter): void {
+    this.ticketsStore.update({
+      filter,
+    });
   }
 
   // update(id, ticket: Partial<Ticket>) {
