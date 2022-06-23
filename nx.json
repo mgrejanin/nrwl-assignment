@@ -8,7 +8,14 @@
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "test", "ssr", "e2e", "swagger"],
+        "cacheableOperations": [
+          "build",
+          "test",
+          "ssr",
+          "e2e",
+          "swagger",
+          "lint"
+        ],
         "cacheDirectory": ".nxcache"
       }
     }
