@@ -27,7 +27,7 @@ export class TicketsUiListComponent {
   }
 
   @Output() addTicket = new EventEmitter<string>();
-  @Output() openTicketDetails = new EventEmitter<string>();
+  @Output() openTicketDetails = new EventEmitter<number>();
   @Output() filterByStatus = new EventEmitter<TicketsStatusToFilter>();
 
   constructor(private dialog: MatDialog) {

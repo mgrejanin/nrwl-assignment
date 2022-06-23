@@ -30,4 +30,8 @@ export class TicketsFeatureListComponent implements OnInit {
   onFilterTickets(filter: TicketsStatusToFilter) {
     this.ticketsService.updateFilter(filter);
   }
+
+  onOpenTicketDetails(id: number) {
+    this.ticketsService.setActiveTicket(id);
+  }
 }

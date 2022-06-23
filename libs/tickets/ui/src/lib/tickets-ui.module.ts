@@ -7,8 +7,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
-import { TicketsUiAddTicketDialogComponent } from './add-ticket-dialog/tickets-ui-add-ticket-dialog.component';
-import { TicketsUiListComponent } from './list/tickets-ui-list.component';
+import { TicketsUiAddTicketDialogComponent } from './components/add-ticket-dialog/tickets-ui-add-ticket-dialog.component';
+import { TicketsUiListComponent } from './components/list/tickets-ui-list.component';
+
 @NgModule({
   imports: [
     CommonModule,

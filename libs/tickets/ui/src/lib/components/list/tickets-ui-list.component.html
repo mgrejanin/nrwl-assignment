@@ -1,8 +1,10 @@
 <div class="container">
   <div class="container__actions">
-    <button mat-raised-button color="primary" (click)="openAddTicketDialog()">
-      Add ticket
-    </button>
+    <div>
+      <button mat-raised-button color="primary" (click)="openAddTicketDialog()">
+        Add ticket
+      </button>
+    </div>
 
     <div>
       <span>Filter status by: </span>
@@ -58,7 +60,7 @@
     <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
     <tr
       mat-row
-      (click)="openTicketDetails.emit(row)"
+      (click)="openTicketDetails.emit(row.id)"
       *matRowDef="let row; columns: columnsToDisplay"
     ></tr>
   </table>

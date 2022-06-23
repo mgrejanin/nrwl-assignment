@@ -8,13 +8,14 @@ import { TicketsState, TicketsStore } from './tickets.store';
 @Injectable({ providedIn: 'root' })
 export class TicketsQuery extends QueryEntity<TicketsState> {
   tickets$: Observable<Ticket[]>;
+  activeTicket$: Observable<Ticket | undefined>;
   statusToFilter$: Observable<TicketsStatusToFilter>;
 
   constructor(protected override store: TicketsStore) {
     super(store);
 
+    this.activeTicket$ = this.selectActive();
     this.statusToFilter$ = this.select((state) => state.filter);
-
     this.tickets$ = this.statusToFilter$.pipe(
       switchMap((filter) =>
         this.selectAll({
