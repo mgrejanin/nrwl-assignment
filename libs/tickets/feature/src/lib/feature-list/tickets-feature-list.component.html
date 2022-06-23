@@ -1,3 +1,4 @@
 <acme-tickets-ui-list
   [tickets]="(tickets$ | async) || []"
+  (addTicket)="onAddTicket($event)"
 ></acme-tickets-ui-list>

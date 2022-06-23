@@ -5,17 +5,22 @@ import { TicketsStore } from './tickets.store';
 
 @Injectable({ providedIn: 'root' })
 export class TicketsService {
-  constructor(private ticketsStore: TicketsStore, private http: HttpClient) {}
+  constructor(
+    private ticketsStore: TicketsStore,
+    private httpClient: HttpClient
+  ) {}
 
-  get() {
-    return this.http.get<Ticket[]>('/api/tickets').subscribe((tickets) => {
-      this.ticketsStore.set(tickets);
-    });
+  getTickets(): void {
+    this.httpClient
+      .get<Ticket[]>('/api/tickets')
+      .subscribe((tickets) => this.ticketsStore.set(tickets));
   }
 
-  // add(ticket: Ticket) {
-  //   this.ticketsStore.add(ticket);
-  // }
+  addTicket(payload: { description: string }): void {
+    this.httpClient
+      .post<Ticket>('/api/tickets', payload)
+      .subscribe((ticket: Ticket) => this.ticketsStore.add(ticket));
+  }
 
   // update(id, ticket: Partial<Ticket>) {
   //   this.ticketsStore.update(id, ticket);

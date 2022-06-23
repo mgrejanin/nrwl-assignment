@@ -7,13 +7,13 @@ import { MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./tickets-ui-add-ticket-dialog.component.scss'],
 })
 export class TicketsUiAddTicketDialogComponent {
-  ticketDescription!: string;
+  description!: string;
 
   constructor(
     public dialogRef: MatDialogRef<TicketsUiAddTicketDialogComponent>
   ) {}
 
   onCancel(): void {
-    this.dialogRef.close();
+    this.dialogRef.close(null);
   }
 }

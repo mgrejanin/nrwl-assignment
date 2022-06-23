@@ -18,10 +18,6 @@ export class ApiService {
     return this.httpClient.get<User>(`/api/users/${id}`);
   }
 
-  newTicket(payload: { description: string }) {
-    return this.httpClient.post<Ticket>('/api/tickets', payload);
-  }
-
   assign(ticketId: number, userId: number) {
     return this.httpClient.put<void>(
       `/api/tickets/${ticketId}/assign/${userId}`,

@@ -19,10 +19,10 @@ export class TicketsFeatureListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.ticketsService.get();
+    this.ticketsService.getTickets();
   }
 
-  onAddTicket(): void {
-    return;
+  onAddTicket(description: string): void {
+    this.ticketsService.addTicket({ description });
   }
 }
