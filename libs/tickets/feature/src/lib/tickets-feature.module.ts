@@ -1,5 +1,6 @@
 import { TicketsDataAccessModule } from '@acme/tickets/data-access';
 import { TicketsUiModule } from '@acme/tickets/ui';
+import { UsersDataAccessModule } from '@acme/users/data-access';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
@@ -14,6 +15,7 @@ import { TicketsFeatureListComponent } from './pages/list/tickets-feature-list.c
     CommonModule,
     TicketsUiModule,
     TicketsDataAccessModule,
+    UsersDataAccessModule,
     MatSnackBarModule,
     RouterModule.forChild([
       {

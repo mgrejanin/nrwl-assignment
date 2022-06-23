@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 import { TicketsQuery } from './tickets.query';
 import { TicketsStore } from './tickets.store';
 
-@Injectable({ providedIn: 'root' })
+@Injectable()
 export class TicketsService {
   constructor(
     private ticketsStore: TicketsStore,

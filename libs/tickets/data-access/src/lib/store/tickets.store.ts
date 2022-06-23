@@ -12,7 +12,7 @@ export interface TicketsState extends EntityState<Ticket, number>, ActiveState {
   filter: TicketsStatusToFilter;
 }
 
-@Injectable({ providedIn: 'root' })
+@Injectable()
 @StoreConfig({ name: 'tickets' })
 export class TicketsStore extends EntityStore<TicketsState> {
   constructor() {

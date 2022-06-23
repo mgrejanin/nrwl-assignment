@@ -13,12 +13,7 @@ import { TicketsUiAddTicketDialogComponent } from '../add-ticket-dialog/tickets-
 })
 export class TicketsUiListComponent {
   readonly ticketsStatusToFilter = TicketsStatusToFilter;
-  readonly columnsToDisplay: string[] = [
-    'id',
-    'description',
-    'assigneeId',
-    'completed',
-  ];
+  readonly columnsToDisplay: string[] = ['id', 'description', 'completed'];
   dataSource: MatTableDataSource<Ticket>;
   statusToFilter: string[] = [];
 

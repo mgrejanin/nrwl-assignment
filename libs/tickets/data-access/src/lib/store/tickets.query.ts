@@ -5,7 +5,7 @@ import { QueryEntity } from '@datorama/akita';
 import { Observable, switchMap } from 'rxjs';
 import { TicketsState, TicketsStore } from './tickets.store';
 
-@Injectable({ providedIn: 'root' })
+@Injectable()
 export class TicketsQuery extends QueryEntity<TicketsState> {
   tickets$: Observable<Ticket[]>;
   activeTicket$: Observable<Ticket | undefined>;
