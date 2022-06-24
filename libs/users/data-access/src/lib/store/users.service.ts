@@ -12,4 +12,10 @@ export class UsersService {
       this.usersStore.set(users);
     });
   }
+
+  getUser(id: number) {
+    return this.httpClient
+      .get<User>(`/api/users/${id}`)
+      .subscribe((user) => this.usersStore.add(user));
+  }
 }

@@ -6,7 +6,6 @@ import { NgModule } from '@angular/core';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { RouterModule } from '@angular/router';
 import { TicketsFeatureContainerComponent } from './container/tickets-feature-container.component';
-import { TicketDetailsGuard } from './guards/ticket-details.guard';
 import { TicketsFeatureDetailsComponent } from './pages/details/tickets-feature-details.component';
 import { TicketsFeatureListComponent } from './pages/list/tickets-feature-list.component';
 
@@ -28,7 +27,6 @@ import { TicketsFeatureListComponent } from './pages/list/tickets-feature-list.c
           },
           {
             path: 'details/:ticketId',
-            canActivate: [TicketDetailsGuard],
             component: TicketsFeatureDetailsComponent,
           },
         ],
@@ -40,6 +38,5 @@ import { TicketsFeatureListComponent } from './pages/list/tickets-feature-list.c
     TicketsFeatureDetailsComponent,
     TicketsFeatureContainerComponent,
   ],
-  providers: [TicketDetailsGuard],
 })
 export class TicketsFeatureModule {}

@@ -1,1 +1,7 @@
-<div>{{ activeTicket$ | async | json }}</div>
+<acme-tickets-ui-details
+  [ticket]="(activeTicket$ | async) || null"
+  (completeTicket)="onCompleteTicket($event)"
+  (assigneTicket)="onAssigneTicket($event)"
+  [assignee]="(assignee$ | async) || null"
+  [users]="(users$ | async) || []"
+></acme-tickets-ui-details>

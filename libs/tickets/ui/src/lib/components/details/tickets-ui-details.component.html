@@ -1,0 +1,67 @@
+<div class="container">
+  <ng-container *ngIf="ticket; else loadingContainer">
+    <mat-card>
+      <div class="container__header">
+        <button mat-mini-fab color="primary" [routerLink]="'tickets'">
+          <mat-icon>arrow_back</mat-icon>
+        </button>
+        <mat-card-title class="container__header-title"
+          >Ticket #{{ ticket.id }}</mat-card-title
+        >
+        <mat-chip-list aria-label="Color selection">
+          <mat-chip [color]="ticket.completed ? 'primary' : 'warn'" selected>
+            {{ ticket.completed ? 'Completed' : 'Pending' }}
+          </mat-chip>
+        </mat-chip-list>
+      </div>
+
+      <mat-card-content class="container__content">
+        <div>
+          <h2>Description</h2>
+          <p>
+            {{ ticket.description }}
+          </p>
+        </div>
+        <div>
+          <h3>Assignee</h3>
+          <mat-chip-list aria-label="Color selection">
+            <mat-chip [color]="'primary'" [matMenuTriggerFor]="usersList">
+              {{ assignee?.name || 'Unassigned' }}
+            </mat-chip>
+            <mat-menu #usersList="matMenu">
+              <button
+                *ngFor="let user of users"
+                mat-menu-item
+                (click)="
+                  assigneTicket.emit({ id: ticket.id, assigneeId: user.id })
+                "
+              >
+                {{ user.name }}
+              </button>
+            </mat-menu>
+          </mat-chip-list>
+          <p></p>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button
+          mat-button
+          color="primary"
+          (click)="
+            completeTicket.emit({
+              id: ticket.id,
+              complete: !ticket.completed
+            })
+          "
+        >
+          Mark as {{ !ticket.completed ? 'completed' : 'uncompleted' }}
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </ng-container>
+</div>
+
+<ng-template #loadingContainer
+  ><div class="container__loader mat-card">
+    <mat-spinner></mat-spinner></div
+></ng-template>

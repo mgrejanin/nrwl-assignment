@@ -41,13 +41,9 @@
       <th mat-header-cell *matHeaderCellDef>Status</th>
       <td mat-cell *matCellDef="let ticket">
         <mat-chip-list>
-          <div
-            *ngIf="
-              ticket.completed;
-              then completedTicketChips;
-              else uncompletedTicketChips
-            "
-          ></div>
+          <ng-container *ngIf="ticket.completed; else uncompletedTicketChips">
+            <mat-chip color="primary" selected>Completed</mat-chip>
+          </ng-container>
         </mat-chip-list>
       </td>
     </ng-container>
@@ -65,9 +61,6 @@
   </div>
 </div>
 
-<ng-template #completedTicketChips
-  ><mat-chip color="primary" selected>Completed</mat-chip></ng-template
->
 <ng-template #uncompletedTicketChips
   ><mat-chip color="warn" selected>Pending</mat-chip></ng-template
 >

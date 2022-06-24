@@ -1,0 +1,27 @@
+.container {
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    &-title {
+      margin: 0;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    margin: 32px 0;
+    gap: 16px;
+  }
+
+  &__loader {
+    display: flex;
+    justify-content: center;
+
+    padding: 32px;
+  }
+}
