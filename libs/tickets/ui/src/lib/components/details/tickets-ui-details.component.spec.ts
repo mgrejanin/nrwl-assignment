@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { TicketsUiDetailsComponent } from './tickets-ui-details.component';
 
@@ -8,6 +9,7 @@ describe('TicketsUiDetailsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [MatProgressSpinnerModule],
       declarations: [TicketsUiDetailsComponent],
     }).compileComponents();
   });

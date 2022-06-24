@@ -20,14 +20,6 @@
       }
     }
   },
-  "targetDependencies": {
-    "build": [
-      {
-        "target": "build",
-        "projects": "dependencies"
-      }
-    ]
-  },
   "workspaceLayout": {
     "libsDir": "libs",
     "appsDir": "apps"
@@ -61,7 +53,10 @@
       "style": "css"
     }
   },
-  "cli": {
-    "defaultCollection": "@nrwl/angular"
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "targetDefaults": {
+    "build": {
+      "dependsOn": ["^build"]
+    }
   }
 }

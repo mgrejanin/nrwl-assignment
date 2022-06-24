@@ -94,8 +94,4 @@ export class TicketsService {
       .delete<void>(`/api/tickets/${ticketId}/complete`)
       .subscribe(() => this.ticketsStore.updateActive({ completed }));
   }
-
-  // remove(id: ID) {
-  //   this.ticketsStore.remove(id);
-  // }
 }

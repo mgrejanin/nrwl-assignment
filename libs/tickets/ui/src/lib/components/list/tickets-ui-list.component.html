@@ -1,7 +1,13 @@
 <div class="container">
   <div class="container__actions">
     <div>
-      <button mat-raised-button color="primary" (click)="openAddTicketDialog()">
+      <button
+        data-testid="add-ticket-button"
+        class="add-tick"
+        mat-raised-button
+        color="primary"
+        (click)="openAddTicketDialog()"
+      >
         Add ticket
       </button>
     </div>
